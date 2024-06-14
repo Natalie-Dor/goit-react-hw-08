@@ -2,7 +2,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { setAuthHeader } from "../auth/operations";
 
-// GET @ /contacts
+// GET  /contacts
 export const fetchContacts = createAsyncThunk(
   "contacts/fetchAll",
   async (_, thunkAPI) => {
@@ -20,11 +20,10 @@ export const fetchContacts = createAsyncThunk(
     }
   }
 );
-// POST @ /contacts
+// POST  /contacts
 export const addContact = createAsyncThunk(
   "contacts/addContact",
   async ({ name, number }, thunkAPI) => {
-    // Изменено phone на number
     try {
       const state = thunkAPI.getState();
       const token = state.auth.token;
@@ -43,7 +42,7 @@ export const addContact = createAsyncThunk(
   }
 );
 
-// DELETE @ /contacts/:id
+// DELETE /contacts/:id
 export const deleteContact = createAsyncThunk(
   "contacts/deleteContact",
   async (contactId, thunkAPI) => {
@@ -61,7 +60,7 @@ export const deleteContact = createAsyncThunk(
   }
 );
 
-// PATCH// /contacts /{contactId}
+// PATCH /contacts /{contactId}
 export const updateContact = createAsyncThunk(
   "contacts/updateContact",
   async ({ contactId, updatedData }, thunkAPI) => {
