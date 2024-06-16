@@ -5,7 +5,6 @@ export const selectLoading = state => state.contacts.loading;
 export const selectFilter = state => state.contacts.filter;
 
 export const selectAllContacts = state => state.contacts.items;
-
 export const selectNameFilter = state => state.filters.name;
 // export const selectContactsFilter = state => state.filters?.name ?? "";
 

@@ -6,6 +6,7 @@ import ContactEditor from "../../components/ContactEditor/ContactEditor";
 
 import { selectLoading } from "../../redux/contacts/selectors.js";
 import { fetchContacts } from "../../redux/contacts/operations.js";
+import SearchBox from "../../components/SearchBox/SearchBox.jsx";
 
 export default function ContactsPage() {
   const dispatch = useDispatch();
@@ -20,6 +21,7 @@ export default function ContactsPage() {
       <PageTitle>Your contacts</PageTitle>
       <ContactEditor />
       <div>{isLoading && "Request in progress..."}</div>
+      <SearchBox />
       <ContactList />
     </>
   );
